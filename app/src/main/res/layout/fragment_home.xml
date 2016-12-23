@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+    <LinearLayout
+        android:background="@color/main_bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <main.gooleplay.widget.BannerView
+       android:id="@+id/bv_home"
+       android:layout_width="match_parent"
+       android:layout_height="180dp" />
+        <android.support.v7.widget.RecyclerView
+             android:id="@+id/rv_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</ScrollView>
