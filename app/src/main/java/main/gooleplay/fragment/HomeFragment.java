@@ -18,6 +18,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import main.gooleplay.R;
 import main.gooleplay.adpater.AppListAdapter;
+import main.gooleplay.bean.BannerVo;
+import main.gooleplay.presenter.HomePresenter;
 import main.gooleplay.widget.BannerView;
 
 /**
@@ -28,7 +30,7 @@ import main.gooleplay.widget.BannerView;
  * 附加注释：
  * 主要接口：
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements HomePresenter.View{
     /**
      * 广告图
      */
@@ -61,6 +63,7 @@ public class HomeFragment extends Fragment {
             imageView.setImageResource(image[i]);
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             viewList.add(imageView);
+
         }
         bannerView.setViewList(viewList);
         bannerView.addViewPager(getActivity());
@@ -75,5 +78,32 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    @Override
+    public void setBannerList(List<BannerVo> bannerList) {
+        viewList = new ArrayList<>();
+        int[] image = new int[]{R.mipmap.ic_banner1, R.mipmap.ic_banner2, R.mipmap.ic_banner3, R.mipmap.ic_banner4};
+        for (int i = 0; i < image.length; i++) {
+            ImageView imageView = new ImageView(getActivity());
+          //  imageView.setImageBitmap(ImageCache.getBitmap(bannerList.));
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            viewList.add(imageView);
+
+        }
+        bannerView.setViewList(viewList);
+        bannerView.addViewPager(getActivity());
+        setRecyclerView();
+        bannerView.requestFocus();
+    }
+
+    @Override
+    public void stopLoadingDialog() {
+
+    }
+
+    @Override
+    public void showLoadingDialog() {
+
     }
 }

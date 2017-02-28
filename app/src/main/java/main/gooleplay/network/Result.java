@@ -14,39 +14,9 @@ import java.io.Serializable;
  */
 public class Result<T> implements Serializable {
     private T data;      //返回数据
-
-    private String sign;  //签名
-
-    private String msec;  //当前时间毫秒数
-
-    private String code;  //状态 0-访问成功 1-访问失败
-
-    public boolean isSuccess(){
-        return "0".equals(getCode());
-    }
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMsec() {
-        return msec;
-    }
-
-    public void setMsec(String msec) {
-        this.msec = msec;
-    }
-
-    public String getSign() {
-        return sign;
-    }
-
-    public void setSign(String sign) {
-        this.sign = sign;
-    }
+    private int enable_ak_ad;
+    private  boolean is_new;
+    private int time;
 
     public T getData() {
         return data;
@@ -54,5 +24,29 @@ public class Result<T> implements Serializable {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public boolean is_new() {
+        return is_new;
+    }
+
+    public void setIs_new(boolean is_new) {
+        this.is_new = is_new;
+    }
+
+    public int getEnable_ak_ad() {
+        return enable_ak_ad;
+    }
+
+    public void setEnable_ak_ad(int enable_ak_ad) {
+        this.enable_ak_ad = enable_ak_ad;
     }
 }

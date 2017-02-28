@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="main.gooleplay.activity.TestActivity">
+  <!--  <main.gooleplay.widget.PathView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+    <main.gooleplay.widget.BezierPathView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+  <!--  <main.gooleplay.widget.RotateCircleView
+        android:id="@+id/id_luckypan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/space_x2"
+        />-->
+
+    <!-- &lt;!&ndash;  <Button
+           android:id="@+id/button"
+           android:text="启动微信"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+       <ImageView
+           android:layout_centerInParent="true"
+           android:id="@+id/imageView"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />&ndash;&gt;
+       <TextView
+           android:id="@+id/center"
+           android:layout_centerInParent="true"
+           android:text="园务管理"
+           android:gravity="center"
+           android:textSize="@dimen/ts_x_large"
+           android:background="@drawable/school_center_circle"
+           android:layout_width="150dp"
+           android:layout_height="150dp" />
+
+       <main.gooleplay.widget.CircleBubble
+           android:id="@+id/circle2"
+           app:circleText="喂药"
+           app:circleRadius="30dp"
+           app:squareWidth="100dp"
+           app:circleColor="@color/colorAccent"
+           android:layout_width="100dp"
+           android:layout_height="100dp"
+           android:layout_above="@+id/center"
+           android:layout_marginBottom="-60dp"
+           android:layout_toLeftOf="@+id/circle1"/>
+       <main.gooleplay.widget.CircleBubble
+           android:id="@+id/circle1"
+           app:circleText="学生出勤"
+           app:circleRadius="30dp"
+           app:squareWidth="100dp"
+           app:circleColor="@color/salmon"
+           android:layout_width="100dp"
+           android:layout_height="100dp"
+           android:layout_above="@+id/center"
+           android:layout_centerHorizontal="true"
+           android:layout_marginRight="30dp"
+           android:layout_marginLeft="30dp"
+           />
+       <main.gooleplay.widget.CircleBubble
+           android:id="@+id/circle3"
+           app:circleText="食谱"
+           app:circleRadius="30dp"
+           app:squareWidth="100dp"
+           app:circleColor="@color/hotpink"
+           android:layout_width="100dp"
+           android:layout_height="100dp"
+           android:layout_toRightOf="@+id/circle1"
+           android:layout_above="@+id/center"
+           android:layout_marginBottom="-60dp"
+           />
+       <main.gooleplay.widget.CircleBubble
+           android:id="@+id/circle4"
+           app:circleText="接送登记"
+           app:circleRadius="30dp"
+           app:squareWidth="100dp"
+           app:circleColor="@color/darkcyan"
+           android:layout_width="100dp"
+           android:layout_height="100dp"
+           android:layout_below="@+id/center"
+           android:layout_marginTop="-60dp"
+           android:layout_toLeftOf="@+id/circle1"
+           />
+       <main.gooleplay.widget.CircleBubble
+           android:id="@+id/circle5"
+           app:circleText="课程表"
+           app:circleRadius="30dp"
+           app:squareWidth="100dp"
+           app:circleColor="@color/green"
+           android:layout_width="100dp"
+           android:layout_height="100dp"
+           android:layout_below="@+id/center"
+           android:layout_centerHorizontal="true"
+           android:layout_marginRight="30dp"
+           android:layout_marginLeft="30dp"
+           />
+       <main.gooleplay.widget.CircleBubble
+           android:id="@+id/circle6"
+           app:circleText=" 通知"
+           app:circleRadius="30dp"
+           app:squareWidth="100dp"
+           app:circleColor="@color/violet"
+           android:layout_width="100dp"
+           android:layout_height="100dp"
+           android:layout_toRightOf="@+id/circle1"
+           android:layout_below="@+id/center"
+           android:layout_marginTop="-60dp"
+           />-->
+</RelativeLayout>

@@ -1,20 +1,14 @@
 package main.gooleplay.activity;
 
 
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.List;
 import java.util.Map;
@@ -26,11 +20,12 @@ import main.gooleplay.adpater.LeftMenuAdapter;
 import main.gooleplay.adpater.SimplePagerAdapter;
 import main.gooleplay.base.BaseActivity;
 import main.gooleplay.presenter.MianPresenterCompl;
+import main.gooleplay.rxTest.HttpListener;
 import main.gooleplay.util.G;
 import main.gooleplay.view.MainView;
 import main.gooleplay.widget.PagerSlidingTabStrip;
 
-public class MainActivity extends BaseActivity implements MainView{
+public class MainActivity extends BaseActivity implements MainView, HttpListener {
     /**
      * 页面
      */
@@ -63,7 +58,7 @@ public class MainActivity extends BaseActivity implements MainView{
      * 数据处理
      */
     private MianPresenterCompl compl;
-
+    private String posturl = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,11 +66,26 @@ public class MainActivity extends BaseActivity implements MainView{
         G.initDisplaySize(this);
         ButterKnife.bind(this);
         initView();
+        getDate();
     }
     @Override
     protected void setToolBar() {
      //  setLiftImage(R.mipmap.ic_more);
         setCententTitle("谷歌市场");
+    }
+    private void getDate(){
+     /*   Map<String,Object> params = new HashMap<>();
+        *//*params.put("type",1);
+        params.put("tsId","3ce7105d493444eea3c9ac48eb1b35fe");*//*
+        params.put("format","json");
+        params.put("from","webapp_music");
+        params.put("calback","");
+        params.put("song_id",877578);
+        params.put("method","baidu.ting.song.getRecommandSongList");
+        params.put("num",10);
+        Type type = new TypeToken<Result<String>>() {}.getType();
+        HttpUtil.sendPost(params,type,posturl,this);*/
+     //   Log.i("ssssssss","========================================");
     }
     private void initView(){
         toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close){
@@ -122,4 +132,13 @@ public class MainActivity extends BaseActivity implements MainView{
         });
     }
 
+    @Override
+    public void onSuccess(String uri, Object date) {
+      // Log.i("ssssssssss",date+"");
+    }
+
+    @Override
+    public void onError(String uri, String error) {
+
+    }
 }

@@ -270,4 +270,25 @@ public class G {
         ,"谷歌地图","hao123上网导航","京东","youni有你","万年历-农历黄历","支付宝钱包"};
         return  texts;
     }
+
+    /**  
+      * 先判断是否安装，已安装则启动目标应用程序，否则先安装  
+      * @param packageName 目标应用安装后的包名  
+      * @param appPath 目标应用apk安装文件所在的路径  
+      * @author zuolongsnail  
+      */
+    public static void launchApp(String packageName ,String appPath,Context context){
+        boolean isinstall = new File("/data/data/" + packageName).exists();
+        // 启动目标应用   
+        if(isinstall){
+            // 获取目标应用安装包的Intent    
+            Intent intent = context.getPackageManager().getLaunchIntentForPackage(packageName);
+            context.startActivity(intent);
+        }else{
+            // 安装目标应用   
+            Intent intent = new Intent();
+            intent.setDataAndType(Uri.fromFile(new  File(appPath)), "application/vnd.android.package-archive");
+            context.startActivity(intent);
+        }
+    }
 }

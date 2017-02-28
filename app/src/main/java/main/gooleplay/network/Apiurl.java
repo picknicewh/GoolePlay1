@@ -10,11 +10,13 @@ package main.gooleplay.network;
  */
 public class Apiurl {
 
-    //=============================通讯=====================================
+    //=============================首页=====================================
     /**
-     * 获取通讯成员
+     * 获取首页banner
      */
-    public static final String MESSAGE_GETGTOUP = "/message/getGroup.do";
+    public static final String HOME_BANNER = "/Inew/newBanner/";
+
+
     /**
      * 获取用户详情
      */
@@ -142,10 +144,6 @@ public class Apiurl {
      * 上传图片
      */
     public static final String UPLOADPHOTO="/appUser/uploadPhoto.do";
-    /**
-     * 我的收藏
-     */
-    public static final String MYCOLLECTION=ServerConfigManager.WEB_IP+"/paradise/index.html";
     /**
      * 我的动态
      */

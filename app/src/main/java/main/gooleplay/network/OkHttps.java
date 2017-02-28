@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.lang.reflect.Type;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -83,6 +84,7 @@ public class OkHttps {
             G.log("参数或者访问地址为空");
             return;
         }
+
         //进行网络请求
         postRequest= getInstance()
                 .post(uri_host+uri);
@@ -206,6 +208,7 @@ public class OkHttps {
 //        String sign = EncryptUtil.getSign(map, msec);
 
         //将map转化成httpParams
+        map.putAll(baseMap());
         HttpParams params=new HttpParams();
         Set<Map.Entry<String, Object>> set = map.entrySet();
         Iterator<Map.Entry<String, Object>> iterator = set.iterator();
@@ -221,6 +224,34 @@ public class OkHttps {
         return  params;
     }
 
+   private static Map<String,Object> baseMap(){
+       Map<String,Object> params = new HashMap<>();
+       params.put("tid",0);
+       params.put("webp",1);
+       params.put("nt",1);
+       params.put("s_3pk",1);
+       params.put("re",1);
+       params.put("gender",1);
+       params.put("startCount",1);
+       params.put("cpc",1);
+       params.put("snt",-1);
+       params.put("ch",100230);
+       params.put("os",19);
+       params.put("theme",2);
+       params.put("age",24);
+       params.put("m2","2f582cf092b2b6586236ad025259b4cc");
+       params.put("vc","300070021");
+       params.put("sn","4.589389937671455");
+       params.put("v","7.0.21");
+       params.put("ppi","720_1280");
+       params.put("ca2","armeabi");
+       params.put("ca1","armeabi-v7a");
+       params.put("m","ff863fc2a553953d1d75c404bbb8f611");
+       params.put("md","H30-T00");
+       params.put("br","Huawei");
+       params.put("cpu","H30-mt6582");
+       return params;
+   }
 
 
 }

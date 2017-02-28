@@ -30,4 +30,11 @@
         <attr name="pstsShouldExpand" format="boolean" />
         <attr name="pstsTextAllCaps" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="CircleBubble">
+        <attr name="circleText" format="string"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="circleRadius" format="dimension"/>
+        <attr name="squareWidth" format="dimension"/>
+        <attr name="textColor" format="color"/>
+    </declare-styleable>
 </resources>
